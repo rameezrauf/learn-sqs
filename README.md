@@ -6,4 +6,4 @@ Learn the AWS SQS queueing service
 - Send Messages
 - Receive Messages
 
-[**boto3 Reference** for SQS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html) - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html
+[**boto3 Reference** for SQS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html)
