@@ -1,6 +1,6 @@
 import boto3
 
-queue_url = "https://sqs.us-east-1.amazonaws.com/440848399208/xxxxx"
+queue_url = "https://sqs.us-east-1.amazonaws.com/440848399208/xqd7aq"
 sqs = boto3.client('sqs')
 
 def get_queue_attributes(queue_url):

@@ -2,19 +2,19 @@ import os
 import boto3
 import time
 
-queue_url = "https://sqs.us-east-1.amazonaws.com/440848399208/xxxxx"
+queue_url = "https://sqs.us-east-1.amazonaws.com/440848399208/xqd7aq"
 sqs = boto3.client('sqs')
 
-# def delete_message(queue_url, receipt_handle):
-#     try:
-#         response = sqs.delete_message(
-#             QueueUrl=queue_url,
-#             ReceiptHandle=receipt_handle
-#         )
-#         print(f"Response: {response}")
-#     except Exception as e:
-#         print(f"Error deleting message: {e}")
-#         raise e
+def delete_message(queue_url, receipt_handle):
+    try:
+        response = sqs.delete_message(
+            QueueUrl=queue_url,
+            ReceiptHandle=receipt_handle
+        )
+        print(f"Response: {response}")
+    except Exception as e:
+        print(f"Error deleting message: {e}")
+        raise e
 
 def get_message(queue_url):
     # try to get any messages with message-attributes from SQS queue:
@@ -25,10 +25,10 @@ def get_message(queue_url):
             MaxNumberOfMessages=1,
             VisibilityTimeout=60,
             MessageAttributeNames=['All'],
-            WaitTimeSeconds=30
+            WaitTimeSeconds=10
         )
-#         receipt_handle = response['Messages'][0]['ReceiptHandle']
-#         delete_message(queue_url, receipt_handle)
+        receipt_handle = response['Messages'][0]['ReceiptHandle']
+        delete_message(queue_url, receipt_handle)
 
         print(f"{response}")
 
@@ -45,3 +45,4 @@ def get_message(queue_url):
 
 if __name__ == "__main__":
     get_message(queue_url)
+
